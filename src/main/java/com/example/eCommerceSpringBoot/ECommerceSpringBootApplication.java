@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import com.example.eCommerceSpringBoot.model.Product;
-import com.example.eCommerceSpringBoot.service.ProductService;
+import com.example.eCommerceSpringBoot.models.Product;
+import com.example.eCommerceSpringBoot.services.ProductService;
 
-@ComponentScan({"com.example.eCommerceSpringBoot.service"})
+@ComponentScan({"com.example.eCommerceSpringBoot.services"})
 @SpringBootApplication
 public class ECommerceSpringBootApplication {
 
@@ -23,3 +23,5 @@ public class ECommerceSpringBootApplication {
         };
     }
 }
+
+//When running the application, access the h2-console by localhost:8181/h2-console
