@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {ProductOrders} from "../models/product-orders.model";
+import {ProductOrder} from "../models/product-order.model";
+import {EcommerceService} from "../services/EcommerceService";
+import {Subscription} from "rxjs/internal/Subscription";
 
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })
+
 export class ShoppingCartComponent implements OnInit {
 
   orderFinished: boolean;
@@ -61,6 +66,15 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnDestroy(){
   	this.sub.unsubscribe();
+  }
+
+  private calculateTotal(products: ProductOrder[]) : number {
+    let sum = 0;
+    products.forEach(value =>{
+      sum += (value.product.price * value.quantity);
+    });
+
+    return sum;
   }
 
 }

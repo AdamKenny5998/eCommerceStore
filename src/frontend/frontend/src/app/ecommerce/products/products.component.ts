@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {EcommerceService} from "../services/EcommerceService";
+import {Subscription} from "rxjs/internal/Subscription";
 import {ProductOrder} from "../models/product-order.model";
-import {EcommerceService} from "../models/EcommerceService";
-import {Subscription}
+import {ProductOrders} from "../models/product-orders.model";
+import {Product} from "../models/product.model";
 
 @Component({
   selector: 'app-products',
@@ -9,11 +11,17 @@ import {Subscription}
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+	productOrders: ProductOrder[] = [];
+	products: Product[] = [];
+	selectedProductOrder: ProductOrder;
+	private shoppingCartOrders: ProductOrder;
+	sub: Subscription;
+	productSelected: boolean = false;
 
-  constructor() { }
+  constructor(private ecommerceService: EcommerceService) { }
 
-  ngOnInit(){
-		this.productOrdesr = [];
+  ngOnInit() {
+		this.productOrders = [];
 		this.loadProducts();
 		this.loadOrders();
 	}
@@ -21,13 +29,13 @@ export class ProductsComponent implements OnInit {
 	loadProducts(){
 		this.ecommerceService.getAllProducts()
 		.subscribe(
-			(products: any[] =>{
+			(products: any[]) => {
 				this.products = products;
 				this.products.forEach(product => {
 					this.productOrders.push(new ProductOrder(product, 0));
 					})
 			},
-			(error) = console.log(error)
+			(error) => console.log(error)
 		);
 	}
 
@@ -55,12 +63,16 @@ export class ProductsComponent implements OnInit {
 		this.productSelected = false;
 	}
 
-	reset(){
+	reset() {
 		this.productOrders = [];
 		this.loadProducts();
 		this.ecommerceService.ProductOrders.productOrders = [];
 		this.loadOrders();
 		this.productSelected = false;
+	}
+
+	getProductIndex(product: Product): number{
+		return this.ecommerceService.ProductOrders.productOrders.findIndex(value => value.product === product);
 	}
 
 }

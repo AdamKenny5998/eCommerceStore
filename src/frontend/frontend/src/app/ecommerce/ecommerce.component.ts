@@ -18,7 +18,7 @@ export class EcommerceComponent implements OnInit {
 	@ViewChild('ordersC')
 	ordersC: OrdersComponent;
 	
-	toggleCollapsed(); void{
+	toggleCollapsed(): void{
 		this.collapsed = !this.collapsed;
 	}
 	

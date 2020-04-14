@@ -1,5 +1,9 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
+import {Subject} from "rxjs/internal/Subject";
+import {ProductOrders} from "../model/product-orders.model";
+import {ProductOrder} from "../model/product-order.model";
+
 @Injectable()
 export class EcommerceService{
 	private productsUrl = "api/products";
@@ -14,7 +18,7 @@ export class EcommerceService{
 
 	private total: number;
 
-	PrivateOrderChanged = this.productOrderSubject.asObservable();
+	ProductOrderChanged = this.productOrderSubject.asObservable();
 	OrdersChanged = this.orderSubject.asObservable();
 	TotalChanged = this.totalSubject.asObservable();
 
