@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductsComponent } from './products/products.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @Component({
   selector: 'app-ecommerce',
@@ -6,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ecommerce.component.css']
 })
 export class EcommerceComponent implements OnInit {
-	private  collapsed = true;
+	private  collapsed = true;s
 	orderFinished = false;
 	
 	@ViewChild('productsC')

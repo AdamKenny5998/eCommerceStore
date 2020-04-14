@@ -1,8 +1,8 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/internal/Subject";
-import {ProductOrders} from "../model/product-orders.model";
-import {ProductOrder} from "../model/product-order.model";
+import {ProductOrders} from "../models/product-orders.model";
+import {ProductOrder} from "../models/product-order.model";
 
 @Injectable()
 export class EcommerceService{
@@ -19,17 +19,17 @@ export class EcommerceService{
 	private total: number;
 
 	ProductOrderChanged = this.productOrderSubject.asObservable();
-	OrdersChanged = this.orderSubject.asObservable();
+	OrdersChanged = this.ordersSubject.asObservable();
 	TotalChanged = this.totalSubject.asObservable();
 
 	constructor(private http: HttpClient){
 	}
 
 	getAllProducts(){
-	return this.http.post(this.ordersUrl, order);
+	return this.http.get(this.productsUrl);
 	}
 
-	saveOrder(order: ProductsOrders){
+	saveOrder(order: ProductOrders){
 		return this.http.post(this.ordersUrl, order);
 	}
 
@@ -56,8 +56,8 @@ export class EcommerceService{
 	}
 
 	set Total(value: number){
-		this.total = number;
-		this.totalSubjecct.next();
+		this.total = value;
+		this.totalSubject.next();
 	}
 
 	
