@@ -8,8 +8,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
   templateUrl: './ecommerce.component.html',
   styleUrls: ['./ecommerce.component.css']
 })
+
 export class EcommerceComponent implements OnInit {
-	private  collapsed = true;s
+	public collapsed = true;
 	orderFinished = false;
 	
 	@ViewChild('productsC')
@@ -25,7 +26,7 @@ export class EcommerceComponent implements OnInit {
 		this.collapsed = !this.collapsed;
 	}
 	
-	finishOrder(orderFinished: boolean){
+	finishedOrder(orderFinished: boolean){
 		this.orderFinished = orderFinished;
 	}
 	

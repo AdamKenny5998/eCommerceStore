@@ -6,7 +6,7 @@
     "start": "ng serve --proxy-config proxy-conf.json",
     "build": "ng build",
     "postbuild": "npm run deploy",
-    "predeploy": "rim raf ../resources/static/ && mkdirp ../resources/static",
+    "predeploy": "rimraf ../resources/static/ && mkdirp ../resources/static",
     "deploy": "copyfiles -f dist/frontend/** ../resources/static",
     "test": "ng test",
     "lint": "ng lint",

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.example.eCommerceSpringBoot.models.Product;
 import com.example.eCommerceSpringBoot.services.ProductService;
 
-@ComponentScan({"com.example.eCommerceSpringBoot.services"})
+@ComponentScan({"com.example.eCommerceSpringBoot"})
 @SpringBootApplication
 public class ECommerceSpringBootApplication {
 
