@@ -28,7 +28,7 @@ public class ProductController {
         this.service = productService;
     }
     
-    @GetMapping(value = {"","/"})
+    @GetMapping(value = {"/viewAllProducts"})
     public Iterable<Product> getProducts(){
         return service.getAllProducts();
     }

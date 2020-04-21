@@ -1,11 +1,11 @@
-import {Product} from "./product.model"
+import {Product} from './product.model';
 
-export class ProductOrder{
-	product: Product;
-	quantity: number;
+export class ProductOrder {
+  product: Product;
+  quantity: number;
 
-	constructor(product: Product, quantity: number){
-		this.product = product;
-		this.quantity = quantity;
-	}
+  constructor(product: Product, quantity: number) {
+    this.product = product;
+    this.quantity = quantity;
+  }
 }
