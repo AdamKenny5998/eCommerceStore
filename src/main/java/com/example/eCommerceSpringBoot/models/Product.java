@@ -5,6 +5,7 @@
  */
 package com.example.eCommerceSpringBoot.models;
 
+import java.util.ArrayList;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -73,7 +74,11 @@ public class Product {
         this.pictureUrl = pictureUrl;
     }
 
-    public Product(){
+//    public ArrayList<Product> grabProducts() {
+//        
+//    }
+
+    public Product() {
         super();
     }
 

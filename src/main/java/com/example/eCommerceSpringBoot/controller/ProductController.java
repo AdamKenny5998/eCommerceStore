@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.eCommerceSpringBoot.models.Product;
 import com.example.eCommerceSpringBoot.services.ProductService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  *
@@ -28,6 +29,7 @@ public class ProductController {
         this.service = productService;
     }
     
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = {"/viewAllProducts"})
     public Iterable<Product> getProducts(){
         return service.getAllProducts();

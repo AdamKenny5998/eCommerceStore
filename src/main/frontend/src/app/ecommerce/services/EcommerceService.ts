@@ -6,8 +6,8 @@ import {ProductOrder} from '../models/product-order.model';
 
 @Injectable()
 export class EcommerceService {
-  private productsUrl = 'api/products';
-  private ordersUrl = 'api/orders';
+  private productsUrl = 'http://localhost:8080/api/products/viewAllProducts';
+  private ordersUrl = '/api/orders';
 
   private productOrder: ProductOrder;
   private orders: ProductOrders = new ProductOrders();
