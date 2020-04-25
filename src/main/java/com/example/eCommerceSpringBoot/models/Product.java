@@ -5,6 +5,10 @@
  */
 package com.example.eCommerceSpringBoot.models;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -73,10 +77,6 @@ public class Product {
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
     }
-
-//    public ArrayList<Product> grabProducts() {
-//        
-//    }
 
     public Product() {
         super();
