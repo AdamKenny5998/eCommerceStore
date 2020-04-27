@@ -20,16 +20,11 @@ public class ECommerceSpringBootApplication {
     @Bean
     CommandLineRunner runner(ProductService productService) {
         ArrayList<Product> prodList = new ArrayList<Product>();
-        Product prod1 = new Product(2L, "PS4", "no_image", 200.0);
-        Product prod2 = new Product(3L, "Test3", "no_image", 300.0);
-        prodList.add(prod1);
-        prodList.add(prod2);
+
         
         return args -> {
-            
             for(Product p : prodList)
             productService.save(p);
-            
         };
     }
 }

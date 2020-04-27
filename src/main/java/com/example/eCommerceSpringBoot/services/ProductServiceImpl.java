@@ -5,9 +5,10 @@
  */
 package com.example.eCommerceSpringBoot.services;
 
+import com.example.eCommerceSpringBoot.exceptionHandlers.ResourceNotFoundException;
 import com.example.eCommerceSpringBoot.services.ProductService;
 import com.example.eCommerceSpringBoot.models.Product;
-import com.example.eCommerceSpringBoot.exceptionHandlers.ResourceNotFoundException;
+
 import org.springframework.stereotype.Service;
 import com.example.eCommerceSpringBoot.javaRepositories.ProductRepository;
 import java.util.ArrayList;

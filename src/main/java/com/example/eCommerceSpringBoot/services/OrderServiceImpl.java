@@ -9,7 +9,6 @@ package com.example.eCommerceSpringBoot.services;
  *
  * @author Adam
  */
-import com.example.eCommerceSpringBoot.exceptionHandlers.ResourceNotFoundException;
 import com.example.eCommerceSpringBoot.models.Order;
 import com.example.eCommerceSpringBoot.javaRepositories.OrderRepository;
 import org.springframework.stereotype.Service;

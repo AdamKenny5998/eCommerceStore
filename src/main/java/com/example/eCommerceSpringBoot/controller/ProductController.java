@@ -34,8 +34,4 @@ public class ProductController {
     public Iterable<Product> getProducts(){
         return service.getAllProducts();
     }
-    
-    
-    
-    
 }
